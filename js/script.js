@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $('.square').click(function () {
+  $(document).on("click",function(event) {
     $.ajax(
     {
     url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -8,17 +8,14 @@ $(document).ready(function () {
     success: function (risposta) {
     var number = parseInt(risposta.response);
     console.log(number);
-    $('.square').click(function () {
-      $(this).removeClass('yellow green');
-      $(this).children('span').text(number);
-      console.log($(this));
-      if (number <= 5) {
-        $(this).addClass('yellow');
-      } else {
-        $(this).addClass('green');
-      }
-    });
-
+    $(event.target).removeClass('yellow green');
+    $(event.target).children('span').text(number);
+    console.log($(event.target));
+    if (number <= 5) {
+      $(event.target).addClass('yellow');
+    } else {
+      $(event.target).addClass('green');
+    }
     },
     error: function () {
     alert('errore');

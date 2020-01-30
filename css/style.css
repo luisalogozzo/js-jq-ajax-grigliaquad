@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40vw;
+  width: 40vw;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:  calc(100% / 6);
+  width:  calc(100% / 6);
+  border: 1px solid black;
+}
+
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
